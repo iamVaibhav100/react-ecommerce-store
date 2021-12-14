@@ -5,7 +5,6 @@ import { Badge } from "@material-ui/core";
 import { LocalMallOutlined } from "@material-ui/icons";
 
 const Container = styled.div`
-  height: 60px;
 `;
 
 const Wrapper = styled.div`

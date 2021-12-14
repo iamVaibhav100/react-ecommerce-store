@@ -31,8 +31,9 @@ const Arrow = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
+  height: 100%;
   display: flex;
+  transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
