@@ -1,4 +1,12 @@
-import { Facebook, Instagram, LinkedIn, Twitter } from "@material-ui/icons";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  MailOutline,
+  Phone,
+  Room,
+  Twitter,
+} from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 
@@ -31,7 +39,7 @@ const SocialIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #${props => props.color};
+  background-color: #${(props) => props.color};
   margin-right: 15px;
   cursor: pointer;
 `;
@@ -41,16 +49,36 @@ const Center = styled.div`
   padding: 20px;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  margin-bottom: 30px;
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 8px;
+`;
 
 const Right = styled.div`
   flex: 1;
   padding: 20px;
 `;
+
+const ContactItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+`;
+
+const Payment = styled.img`
+  width: 40%;`;
 
 const Footer = () => {
   return (
@@ -80,16 +108,28 @@ const Footer = () => {
       <Center>
         <Title>Company</Title>
         <List>
-            <ListItem>Home</ListItem>
-            <ListItem>About</ListItem>
-            <ListItem>Contact</ListItem>
-            <ListItem>Men fashion</ListItem>
-            <ListItem>Women fashion</ListItem>
-            <ListItem>My Account</ListItem>
-            <ListItem>Cart</ListItem>
+          <ListItem>Home</ListItem>
+          <ListItem>About</ListItem>
+          <ListItem>Contact</ListItem>
+          <ListItem>Men fashion</ListItem>
+          <ListItem>Women fashion</ListItem>
+          <ListItem>My Account</ListItem>
+          <ListItem>Cart</ListItem>
         </List>
       </Center>
-      <Right></Right>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <Room style={{marginRight: '10px'}}/> Shop Address: 123 Main Street, Anytown, USA
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{marginRight: '10px'}}/> Phone: +1 123 456 789
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{marginRight: '10px'}}/> Email: contact@eapp.dev
+        </ContactItem>
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+      </Right>
     </Container>
   );
 };
