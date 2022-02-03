@@ -3,8 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { Badge } from "@material-ui/core";
 import { LocalMallOutlined } from "@material-ui/icons";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
+  ${mobile({ height: "50px", marginBottom: "10px" })}
 `;
 
 const Wrapper = styled.div`
@@ -12,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0" })}
 `;
 
 const Left = styled.div`
@@ -23,6 +26,7 @@ const Left = styled.div`
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styled.div`
@@ -35,6 +39,10 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  ${mobile({ width: "50px" })}
+  :focus {
+    outline: none;
+  }
 `;
 
 const Center = styled.div`
@@ -44,6 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  ${mobile({ fontSize: "20px" })}
 `;
 
 const Right = styled.div`
@@ -51,12 +60,14 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  ${mobile({ flex: 1, justifyContent: "center", marginRight: "7px" })}
 `;
 
 const MenuItems = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "5px" })}
 `;
 
 const Navbar = () => {
@@ -66,8 +77,8 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input />
-            <Search style={{color: "gray", fontSize: 16}}/>
+            <Input placeholder="Search" />
+            <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
@@ -78,7 +89,7 @@ const Navbar = () => {
           <MenuItems>Login</MenuItems>
           <MenuItems>
             <Badge badgeContent={4} color="primary">
-              <LocalMallOutlined/>
+              <LocalMallOutlined />
             </Badge>
           </MenuItems>
         </Right>
